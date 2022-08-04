@@ -76,7 +76,7 @@
 
 ## Sobre o APP
 
-- Main/runApp:
+- Main/runApp: 
 
 >Executa o app chamando o AppModule
 ***
