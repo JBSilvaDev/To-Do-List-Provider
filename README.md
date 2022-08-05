@@ -4,11 +4,11 @@
 <br>
 <br>
 
-![](/Img/todo_login.jpg)
-![](/Img/todo_cadastro.jpg)
-![](/Img/todo_drawer.jpg)
-![](/Img/todo_new.jpg)
-![](/Img/todo_tasks.jpg)
+![](./imgs/todo_login.jpg)
+![](./imgs/todo_cadastro.jpg)
+![](./imgs/todo_drawer.jpg)
+![](./imgs/todo_new.jpg)
+![](./imgs/todo_tasks.jpg)
 
 # Todo-List
 
@@ -114,3 +114,6 @@
 - SplashPage:
 
 > Pagina estática que so aparece o logo do app e redireciona para outra
+
+
+
