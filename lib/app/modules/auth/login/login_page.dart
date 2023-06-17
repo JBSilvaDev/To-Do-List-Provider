@@ -4,7 +4,6 @@ import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/notifier/default_listener_notifier.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
-import 'package:todo_list_provider/app/core/ui/todo_list_ui_config.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_field.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_logo.dart';
 import 'package:todo_list_provider/app/modules/auth/login/login_controller.dart';
@@ -68,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    TodoListLogo(),
+                    const TodoListLogo(),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 20),
@@ -85,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Validatorless.email('E-mail, inválido')
                               ]),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             TodoListField(
@@ -98,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                                     6, 'Senha invalida, minimo caracteres')
                               ]),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
@@ -117,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                                             'Informe seu e-mail de recuperação');
                                       }
                                     },
-                                    child: Text('Esqueceu sua senha?')),
+                                    child: const Text('Esqueceu sua senha?')),
                                 ElevatedButton(
                                   onPressed: () {
                                     final formValid =
@@ -135,8 +134,8 @@ class _LoginPageState extends State<LoginPage> {
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(20))),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(10.0),
                                     child: Text('Login'),
                                   ),
                                 ),
@@ -159,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         child: Column(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 30,
                             ),
                             SignInButton(
@@ -176,13 +175,13 @@ class _LoginPageState extends State<LoginPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('Não tem conta?'),
+                                const Text('Não tem conta?'),
                                 TextButton(
                                     onPressed: () {
                                       Navigator.of(context)
                                           .pushNamed('/register');
                                     },
-                                    child: Text('Cadastre-se'))
+                                    child: const Text('Cadastre-se'))
                               ],
                             )
                           ],

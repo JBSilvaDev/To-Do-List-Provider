@@ -22,7 +22,7 @@ class ImplUserRepositories implements UserRepositories {
           email: email, password: password);
 
       return userCredencial.user;
-    } on FirebaseAuthException catch (e, s) {
+    } on FirebaseAuthException catch (e) {
       // email-already-exists
       if (e.code == 'email-already-in-use') {
         final loginTypes =
@@ -47,13 +47,14 @@ class ImplUserRepositories implements UserRepositories {
       final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
       return userCredential.user;
-    } on PlatformException catch (e, s) {
+    } on PlatformException catch (e) {
       throw AuthExceptions(message: e.message ?? 'Erro ao realizar login');
-    } on FirebaseAuthException catch (e, s) {
+    } on FirebaseAuthException catch (e) {
       if (e.code == "wrong-password") {
         throw AuthExceptions(message: e.message ?? 'Erro ao realizar login');
       }
     }
+    return null;
   }
 
   @override
@@ -70,7 +71,7 @@ class ImplUserRepositories implements UserRepositories {
       } else {
         throw AuthExceptions(message: 'E-mail nao cadastrado');
       }
-    } on PlatformException catch (e, s) {
+    } on PlatformException {
       throw AuthExceptions(message: 'Erro ao resetar senha');
     }
   }
@@ -112,6 +113,7 @@ class ImplUserRepositories implements UserRepositories {
         throw AuthExceptions(message: 'Erro ao realizar login');
       }
     }
+    return null;
   }
 
   @override
@@ -119,6 +121,7 @@ class ImplUserRepositories implements UserRepositories {
     await _clearBD();
     await GoogleSignIn().signOut();
     _firebaseAuth.signOut();
+    return null;
   }
 
   @override

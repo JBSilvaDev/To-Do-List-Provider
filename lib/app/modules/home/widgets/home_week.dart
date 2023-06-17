@@ -16,33 +16,32 @@ class HomeWeek extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             'Dia da semana',
             style: context.titleStyle,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             height: 95,
             child: Selector<HomeController, DateTime>(
               selector: (context, controller) =>
                   controller.initialDateOfWeek ?? DateTime.now(),
               builder: (context, value, child) {
                 return DatePicker(
-                  
                   value,
                   locale: 'pt-BR',
                   initialSelectedDate: value,
                   selectionColor: context.primaryColor,
                   selectedTextColor: Colors.white,
                   daysCount: 7,
-                  monthTextStyle: TextStyle(fontSize: 8),
-                  dayTextStyle: TextStyle(fontSize: 13),
-                  dateTextStyle: TextStyle(fontSize: 13),
+                  monthTextStyle: const TextStyle(fontSize: 8),
+                  dayTextStyle: const TextStyle(fontSize: 13),
+                  dateTextStyle: const TextStyle(fontSize: 13),
                   onDateChange: (date) {
                     context.read<HomeController>().filterByDay(date);
                   },
